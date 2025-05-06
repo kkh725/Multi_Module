@@ -27,9 +27,7 @@
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/data" />
-            <option value="$PROJECT_DIR$/core/test" />
             <option value="$PROJECT_DIR$/mylibrary" />
-            <option value="$PROJECT_DIR$/mylibrary/mylibrary" />
           </set>
         </option>
       </GradleProjectSettings>

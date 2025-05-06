@@ -15,7 +15,7 @@ package com.test2.convention
  *   limitations under the License.
  */
 
-import com.android.build.gradle.api.AndroidBasePlugin
+import com.test2.convention.extensions.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

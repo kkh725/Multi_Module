@@ -1,4 +1,4 @@
-package com.test2.convention
+package com.test2.convention.extensions
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion

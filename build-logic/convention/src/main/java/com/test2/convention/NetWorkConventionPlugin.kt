@@ -1,6 +1,6 @@
 package com.test2.convention
 
-import com.android.build.gradle.api.AndroidBasePlugin
+import com.test2.convention.extensions.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -12,12 +12,12 @@ class NetWorkConventionPlugin: Plugin<Project> {
             apply(plugin = "com.google.devtools.ksp")
 
             dependencies {
-                "ksp"(libs.findLibrary("hilt.compiler").get())
                 "implementation"(libs.findLibrary("retrofit").get())
                 "implementation"(libs.findLibrary("retrofit-kotlin-serialization").get())
+                "implementation"(libs.findLibrary("retrofit-gson").get())
 
                 "implementation"(libs.findLibrary("okhttp").get())
-                "implementation"(libs.findLibrary("okhttp-logging-interceptor").get())
+                "implementation"(libs.findLibrary("okhttp-logging").get())
                 "implementation"(platform(libs.findLibrary("okhttp-bom").get()))
             }
         }

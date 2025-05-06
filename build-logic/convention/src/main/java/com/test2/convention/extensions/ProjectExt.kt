@@ -1,5 +1,5 @@
 // ProjectExt.kt
-package com.test2.convention
+package com.test2.convention.extensions
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
