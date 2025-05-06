@@ -14,7 +14,6 @@ material = "1.10.0"
 
 # Gradle Plugin Version
 android-gradle-plugin ="8.9.0"
-kotlin-gradle-plugin = "1.8.20"
 
 #hilt
 hilt = "2.56"
@@ -39,6 +38,8 @@ projectTargetSdkVersion = "34"
 projectCompileSdkVersion = "34"
 desugar_jdk_libs = "2.0.4"
 
+# libraries ------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -80,6 +81,9 @@ retrofit-kotlin-serialization = { group = "com.squareup.retrofit2", name = "conv
 okhttp-bom = {group = "com.squareup.okhttp3", name = "okhttp-bom",version.ref = "okhttp"}
 okhttp = {group = "com.squareup.okhttp3", name = "okhttp",version.ref = "okhttp"}
 okhttp-logging-interceptor = {group = "com.squareup.okhttp3", name = "okhttp-logging-interceptor",version.ref = "okhttp"}
+
+# plugins ------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
