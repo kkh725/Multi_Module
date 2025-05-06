@@ -14,21 +14,27 @@ kotlin {
     }
 }
 
+//org. gradle import를 위한 의존성.
 dependencies{
-    implementation("com.android.tools.build:gradle:8.9.0") // ✅ 버전 맞게 수정
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    implementation(libs.android.gradle.plugin)
+    implementation(libs.kotlin.gradle.plugin)
 }
 
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "com.test2.moduletest.application"
+            id = libs.plugins.multi.module.android.application.get().pluginId
             implementationClass = "com.test2.convention.AndroidApplicationConventionPlugin"
         }
 
         register("hilt") {
-            id = libs.plugins.nowinandroid.hilt.get().pluginId
+            id = libs.plugins.multi.module.hilt.get().pluginId
             implementationClass = "com.test2.convention.HiltConventionPlugin"
+        }
+
+        register("network") {
+            id = libs.plugins.multi.module.network.get().pluginId
+            implementationClass = "com.test2.convention.NetWorkConventionPlugin"
         }
     }
 }

@@ -6,6 +6,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
+//그래들에서 클래스를 플러그인으로 설정할수 있게끔 함.
 class AndroidApplicationConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {
         target.run {

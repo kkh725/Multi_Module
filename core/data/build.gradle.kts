@@ -1,8 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.nowinandroid.hilt)
-//    alias(libs.plugins.hilt)
+    alias(libs.plugins.multi.module.hilt)
 }
 
 android {
