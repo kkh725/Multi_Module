@@ -32,9 +32,9 @@ projectApplicationId = "com.test2.moduletest"
 projectVersionName = "1.0"
 projectVersionCode = "1"
 projectMinSdkVersion = "24"
-projectTargetSdkVersion = "34"
-projectCompileSdkVersion = "34"
-desugar_jdk_libs = "2.0.4"
+projectTargetSdkVersion = "35"
+projectCompileSdkVersion = "35"
+desugar_jdk_libs = "2.1.5"
 
 # libraries ------------------------------------------------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------
@@ -97,6 +97,8 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 multi-module-android-application = { id = "multi.module.android.application"}
 multi-module-hilt = { id = "multi.module.hilt" }
 multi-module-network = {id = "multi.module-network"}
+multi-module-library = {id = "multi.module-library"}
+
 
 
 

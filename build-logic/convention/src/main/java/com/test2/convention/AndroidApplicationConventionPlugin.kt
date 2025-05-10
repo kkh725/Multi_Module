@@ -18,14 +18,16 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
             }
 
             extensions.configure<ApplicationExtension> {
+
+                configureKotlinAndroid(this)
+
                 defaultConfig {
+                    namespace = libs.findVersion("projectApplicationId").get().toString()
                     applicationId = libs.findVersion("projectApplicationId").get().toString()
                     targetSdk = libs.findVersion("projectTargetSdkVersion").get().toString().toInt()
                     versionCode = libs.findVersion("projectVersionCode").get().toString().toInt()
                     versionName = libs.findVersion("projectVersionName").get().toString()
                 }
-
-                configureKotlinAndroid(this)
             }
         }
     }

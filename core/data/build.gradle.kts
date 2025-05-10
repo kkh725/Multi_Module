@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.multi.module.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.multi.module.hilt)
     alias(libs.plugins.multi.module.network)
@@ -7,28 +7,6 @@ plugins {
 
 android {
     namespace = "com.test2.data"
-    compileSdk = 35
-
-    defaultConfig {
-        minSdk = 30
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
 }
 
 dependencies {

@@ -36,5 +36,10 @@ gradlePlugin {
             id = libs.plugins.multi.module.network.get().pluginId
             implementationClass = "com.test2.convention.NetWorkConventionPlugin"
         }
+
+        register("androidLibrary") {
+            id = libs.plugins.multi.module.library.get().pluginId
+            implementationClass = "com.test2.convention.AndroidLibraryConventionPlugin"
+        }
     }
 }

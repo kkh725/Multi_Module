@@ -10,10 +10,17 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>
 ) {
+    /**
+     * ApplicationExtension, LibraryExtension 등의 타입의 공통기능을
+     * 추상화한 상위타입. 공통적으로 적용할 수 있는 부분을 이쪽에서 적용.
+     */
     commonExtension.apply {
-        compileSdk = 34
 
-        defaultConfig.minSdk = 24
+        compileSdk = libs.findVersion("projectCompileSdkVersion").get().toString().toInt()
+
+        defaultConfig {
+            minSdk = 21
+        }
 
         compileOptions {
             isCoreLibraryDesugaringEnabled = true
@@ -29,6 +36,11 @@ internal fun Project.configureKotlinAndroid(
     }
 }
 
+/**
+ * kotlinOptions {
+ *         jvmTarget = "11"
+ *     } 와 같음.
+ */
 private fun Project.configureKotlin() {
     tasks.withType<KotlinCompile>().configureEach {
         compilerOptions {
