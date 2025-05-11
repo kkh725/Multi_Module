@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.Preferences
 import com.test2.datastore.DataStoreManagerImpl
 import com.test2.datastore.DataStoreManager
 import com.test2.datastore.datasource.LocalDataSource
+import com.test2.datastore.datasource.LocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,6 +39,6 @@ object DataStoreModule {
     @Provides
     @Singleton
     fun provideLocalDataSource(dataStoreManager: DataStoreManager) : LocalDataSource {
-        return LocalDataSource(dataStoreManager)
+        return LocalDataSourceImpl(dataStoreManager)
     }
 }
