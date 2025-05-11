@@ -26,6 +26,9 @@ retrofit-gson = "2.13.1"
 #okhttp
 okhttp = "4.12.0"
 
+#datastore
+datastore = "1.1.6"
+
 
 # Project versions
 projectApplicationId = "com.test2.moduletest"
@@ -57,6 +60,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 
+#agp, koltin-gradle
 android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin" }
 
@@ -80,6 +84,9 @@ retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", ver
 okhttp-bom = {group = "com.squareup.okhttp3", name = "okhttp-bom",version.ref = "okhttp"}
 okhttp = {group = "com.squareup.okhttp3", name = "okhttp",version.ref = "okhttp"}
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+#datastore
+datastore = {group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore"}
 
 # plugins ------------------------------------------------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------
