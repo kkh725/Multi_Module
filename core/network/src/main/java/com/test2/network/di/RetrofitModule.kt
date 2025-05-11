@@ -14,11 +14,11 @@ import javax.inject.Singleton
 // NetworkModule.kt
 @Module
 @InstallIn(SingletonComponent::class)
-object RetrofitModule {
+internal object RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    internal fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
@@ -29,7 +29,7 @@ object RetrofitModule {
     @TestApi
     @Provides
     @Singleton
-    fun provideJsonPlaceholderRetrofit(): Retrofit {
+    internal fun provideJsonPlaceholderRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com")
             .addConverterFactory(GsonConverterFactory.create())
@@ -40,7 +40,7 @@ object RetrofitModule {
     @TestApi2
     @Provides
     @Singleton
-    fun provideAnotherApiRetrofit(): Retrofit {
+    internal fun provideAnotherApiRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com")
             .addConverterFactory(GsonConverterFactory.create())
@@ -54,8 +54,8 @@ object RetrofitModule {
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class TestApi
+internal annotation class TestApi
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class TestApi2
+internal annotation class TestApi2

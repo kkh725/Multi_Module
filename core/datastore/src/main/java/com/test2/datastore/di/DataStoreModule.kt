@@ -5,8 +5,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.dataStoreFile
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
+import com.test2.datastore.DataStoreManagerImpl
 import com.test2.datastore.DataStoreManager
-import com.test2.datastore.IDataStoreManager
 import com.test2.datastore.datasource.LocalDataSource
 import dagger.Module
 import dagger.Provides
@@ -27,16 +27,17 @@ object DataStoreModule {
         }
     }
 
-    //internal fun 사용 시 외부에서 주입 할 수 없음.
+    // internal fun 사용 시 외부에서 주입 할 수 없음.
     @Provides
     @Singleton
-    internal fun provideDataStoreManager(dataStore: DataStore<Preferences>) : IDataStoreManager {
-        return DataStoreManager(dataStore)
+    internal fun provideDataStoreManager(dataStore: DataStore<Preferences>) : DataStoreManager {
+        return DataStoreManagerImpl(dataStore)
     }
 
+    // LocalDataSource 만 외부에서 주입해 사용.
     @Provides
     @Singleton
-    fun provideLocalDataSource(dataStoreManager: IDataStoreManager) : LocalDataSource {
+    fun provideLocalDataSource(dataStoreManager: DataStoreManager) : LocalDataSource {
         return LocalDataSource(dataStoreManager)
     }
 }

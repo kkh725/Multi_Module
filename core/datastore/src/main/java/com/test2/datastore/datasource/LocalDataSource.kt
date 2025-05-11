@@ -4,12 +4,11 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.test2.datastore.DataStoreManager
-import com.test2.datastore.IDataStoreManager
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 
-class LocalDataSource @Inject constructor(private val dataStoreManager: IDataStoreManager){
+class LocalDataSource @Inject constructor(private val dataStoreManager: DataStoreManager){
 
     private val keyString = stringPreferencesKey("CUSTOM_TEXT")
     private val keyBoolean= booleanPreferencesKey("CUSTOM_BOOL")
